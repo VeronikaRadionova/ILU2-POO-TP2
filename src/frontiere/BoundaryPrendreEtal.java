@@ -13,7 +13,11 @@ public class BoundaryPrendreEtal {
 	}
 
 	public void prendreEtal(String nomVendeur) {
-		//TODO a completer
+		//verifier avec verifier identite i td
+		System.out.println("Bonjour " + nomVendeur + " , je vais regarder si je peux vous trouver un étal. C'est parfait, il me reste un étal pour vous !\r\n"
+				+ "Il me faudrait quelques renseignements :");
+		String produit = ("Quel produit souhaitez-vous vendre ?");
+		
 	}
 
 	private void installerVendeur(String nomVendeur) {
