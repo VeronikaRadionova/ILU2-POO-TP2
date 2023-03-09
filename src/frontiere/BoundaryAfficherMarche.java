@@ -16,7 +16,12 @@ public class BoundaryAfficherMarche {
 		} else {
 			System.out.println(nomAcheteur + ", vous trouverez au marché :");
 			for (int i=0; i<infosMarche.length; i++) {
-				System.out.println("- ");
+				String vendeur = infosMarche[i];
+				i = i + 1;
+				String quantite = infosMarche[i];
+				i = i + 1;
+				String produit = infosMarche[i];
+				System.out.println("-" + vendeur + " qui rend " + quantite + " " + produit);
 			}
 		}
 	}
