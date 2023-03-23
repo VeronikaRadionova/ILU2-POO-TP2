@@ -22,10 +22,37 @@ public class BoundaryAcheterProduit {
 			if (vendeurAvecProduit == null) {
 				System.out.println("Désolée, personne ne vend ce produit au marché.");
 			} else {
+				Gaulois[] etalsProduit = controlAcheterProduit.chercherProduit(produit);
+				int nbCommercants = etalsProduit.length;
 				
-				// tut pohoje nado sdelat' vybor kak v Emmenager i drugih pohojih shtukah
-				// so string builderom i cyclom vyvodiashim imena gallov; vozmogno do etogo ih nado v tablizu vsio taki zapisat'
-				//poluchit' nujno imia prodavca
+				StringBuilder question = new StringBuilder();
+				question.append("Chez quel commerçant voulez-vous acheter des " + produit + "\n");
+				for (int i=0; i<nbCommercants; i++) {
+					question.append(String.valueOf(i+1) + " - " + etalsProduit[i].getNom() + "\n");
+				}
+				
+				int choixUtilisateur = -1;
+				String nomCommercant = "nom";
+				
+				// ça marche pas et JE NE COMPRENDS PAS POURQUOI !!!
+				do { 
+					choixUtilisateur = Clavier.entrerEntier(question.toString());
+					if ((choixUtilisateur > 0 ) && (choixUtilisateur < nbCommercants)) {
+						for (int i=0; i<nbCommercants; i++) {
+							if (choixUtilisateur == i) {
+								nomCommercant = etalsProduit[i-1].getNom();
+							}
+						}
+					} else if (choixUtilisateur == nbCommercants) {
+						nomCommercant = etalsProduit[nbCommercants-1].getNom();
+					} else {
+						System.out.println("Vous devez choisir le chiffre entre 1 et " + String.valueOf(nbCommercants) + " !");
+						// il ne traite pas cette situation - ne continue pas boucle while...
+					}	
+				} while ((choixUtilisateur < 0) || (choixUtilisateur > nbCommercants));
+				 
+				
+				System.out.println(nomAcheteur + " se déplace jusqu'à l'étal du vendeur " + nomCommercant + "\n");
 				
 				int nbProduit = Clavier.entrerEntier("Bonjour, " + nomAcheteur + "\n Combien de " + produit + " voulez-vous acheter ?");
 				String[] etalCommercant = controlAcheterProduit.trouverEtalProduit(nomCommercant);
@@ -37,10 +64,10 @@ public class BoundaryAcheterProduit {
 					
 					if (nbProduit > quantite) {
 						System.out.println(nomAcheteur + " veut acheter " + nbProduit + " " + produit + ", malheureusement " + nomCommercant + " n’en a plus que " + quantite + ". Panoramix achète tout le stock de Bonemine.");
-						etalCommercant[4] = String.valueOf(0);
+						etalCommercant[4] = String.valueOf(0); // ça ne change pas ....
 					} else {
-						System.out.println(nomAcheteur + " achète 5 fleurs à " + nomCommercant + ".");
-						etalCommercant[4] = String.valueOf(quantite - nbProduit);
+						System.out.println(nomAcheteur + " achète " + nbProduit + " fleurs à " + nomCommercant + ".");
+						etalCommercant[4] = String.valueOf(quantite - nbProduit); // ou on change [3] ???
 					}
 				}
 			}
