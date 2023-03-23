@@ -43,7 +43,6 @@ public class BoundaryEmmenager {
 		int effetPotionMin = Clavier.entrerEntier("Quelle est la force de potion la plus faible que vous produisez ?");
 		int effetPotionMax = Clavier.entrerEntier("Quelle est la force de potion la\r\n" + "plus forte que vous produisez ?");
 		controlEmmenager.ajouterDuide(nomVisiteur,force,effetPotionMin,effetPotionMax);
-		System.out.println("Le druide " + nomVisiteur + " : « Bonjour, je suis le druide " + nomVisiteur + " et ma potion peut aller d'une force " + effetPotionMin + " à " + effetPotionMax + ".»");
 	}
 	
 	private void emmenagerGaulois(String nomVisiteur) {
