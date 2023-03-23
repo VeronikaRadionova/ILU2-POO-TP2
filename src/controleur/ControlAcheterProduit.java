@@ -25,8 +25,7 @@ public class ControlAcheterProduit {
 		return village.rechercherVendeursProduit(produit);
 	}
 	
-	public String[] trouverEtalProduit(String nomVendeur) { //c'est pour verifier le nombre de produit et la quantiter
-		Etal etalAvecProduit = controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur);
-		return etalAvecProduit.etatEtal();
+	public Etal trouverEtalProduit(String nomVendeur) { //c'est pour verifier le nombre de produit et la quantiter
+		return controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur);
 	}
 }

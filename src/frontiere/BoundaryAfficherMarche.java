@@ -21,7 +21,7 @@ public class BoundaryAfficherMarche {
 				String quantite = infosMarche[i];
 				i = i + 1;
 				String produit = infosMarche[i];
-				System.out.println("-" + vendeur + " qui rend " + quantite + " " + produit);
+				System.out.println("- " + vendeur + " qui vend " + quantite + " " + produit);
 			}
 		}
 	}
