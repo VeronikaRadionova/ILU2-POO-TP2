@@ -56,7 +56,7 @@ public class BoundaryAcheterProduit {
 				
 				int nbProduit = Clavier.entrerEntier("Bonjour, " + nomAcheteur + "\nCombien de " + produit + " voulez-vous acheter ?");
 				Etal etalCommercant = controlAcheterProduit.trouverEtalProduit(nomCommercant);
-				int quantite = Integer.valueOf(etalCommercant.getQuantite());
+				int quantite = etalCommercant.getQuantite();
 				
 				if (quantite == 0) {
 					System.out.println(nomAcheteur + " veut acheter " + nbProduit + " " + produit + ", malheureusement il n’y en a plus !");
