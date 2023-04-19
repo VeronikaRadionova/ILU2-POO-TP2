@@ -14,7 +14,6 @@ public class ControlTrouverEtalVendeur {
 		if (village.trouverHabitant(nomVendeur) != null) {
 			return village.rechercherEtal(village.trouverHabitant(nomVendeur));
 		}
-		Etal etal = null;
-		return etal;
+		return null;
 	}
 }

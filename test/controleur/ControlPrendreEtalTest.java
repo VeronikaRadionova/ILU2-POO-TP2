@@ -48,7 +48,10 @@ class ControlPrendreEtalTest {
 	void testPrendreEtal() {
 		ControlPrendreEtal controlPrendreEtal = new ControlPrendreEtal(controlVerifierIdentite, village);
 		Gaulois obelix = new Gaulois("Obelix", 10);
-		assertEquals(controlPrendreEtal.prendreEtal("Obelix", "fleurs", 5),1);
+		village.ajouterHabitant(obelix);
+		assertEquals(controlPrendreEtal.prendreEtal("Asterix", "fleurs", 5),1);
+		assertNotEquals(controlPrendreEtal.prendreEtal("Obelix", "fleurs", 6),1);
+		
 	}
 
 	@Test
