@@ -36,11 +36,11 @@ class ControlPrendreEtalTest {
 	@Test
 	void testResteEtals() {
 		ControlPrendreEtal controlPrendreEtal = new ControlPrendreEtal(controlVerifierIdentite, village);
-		assertTrue(controlPrendreEtal.resteEtals());
+		assertTrue(controlPrendreEtal.resteEtals(), "Il y a des étals disponibles");
 		Gaulois obelix = new Gaulois("Obelix", 10);
 		village.ajouterHabitant(obelix);
 		village.installerVendeur(obelix, "fleurs", 3);
-		assertFalse(controlPrendreEtal.resteEtals());
+		assertFalse(controlPrendreEtal.resteEtals(), "Il n'y pas d'étals disponibles");
 		
 	}
 

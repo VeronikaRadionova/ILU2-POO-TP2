@@ -30,10 +30,10 @@ class ControlEmmenagerTest {
 	void testIsHabitant() {
 		ControlEmmenager controlEmmenager = new ControlEmmenager(village);
 		controlEmmenager.ajouterGaulois("Bonemine", 10);
-		assertTrue(controlEmmenager.isHabitant("Bonemine"));
-		assertFalse(controlEmmenager.isHabitant("Existe pas"));
+		assertTrue(controlEmmenager.isHabitant("Bonemine"), "Ce gaulois habite dans ce village");
+		assertFalse(controlEmmenager.isHabitant("Existe pas"), "Ce gaulois n'habite pas dans ce village");
 		controlEmmenager.ajouterDuide("Panoramix", 10, 1, 5);
-		assertTrue(controlEmmenager.isHabitant("Panoramix"));
+		assertTrue(controlEmmenager.isHabitant("Panoramix"), "Ce druide habite dans ce village");
 	}
 
 	@Test

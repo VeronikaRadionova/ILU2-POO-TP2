@@ -31,10 +31,11 @@ class ControlAfficherMarcheTest {
 		ControlAfficherMarche controlAfficherMarche = new ControlAfficherMarche(village);
 		//String[] donnes = new String[0];
 		assertNotNull(controlAfficherMarche.donnerInfosMarche());
+		assertEquals(controlAfficherMarche.donnerInfosMarche().length, 0, "Le marché est vide mais le constructeur n'est pas null");
 		Gaulois asterix = new Gaulois("Asterix",5);
 		village.ajouterHabitant(asterix);
 		village.installerVendeur(asterix, "fleurs", 4);
-		assertNotNull(controlAfficherMarche.donnerInfosMarche());
+		assertNotNull(controlAfficherMarche.donnerInfosMarche(), "Les infos du marché existent");
 	}
 
 }

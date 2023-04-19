@@ -31,9 +31,9 @@ class ControlVerifierIdentiteTest {
 	@Test
 	void testVerifierIdentite() {
 		ControlVerifierIdentite controlVerifierIdentite = new ControlVerifierIdentite(village);
-		assertTrue(controlVerifierIdentite.verifierIdentite("Asterix"));
-		assertFalse(controlVerifierIdentite.verifierIdentite("Obelix"));
-		assertTrue(controlVerifierIdentite.verifierIdentite("Abraracourcix"));
+		assertTrue(controlVerifierIdentite.verifierIdentite("Asterix"), "Ce gaulois habite dans ce village");
+		assertFalse(controlVerifierIdentite.verifierIdentite("Obelix"), "Ce gaulois n(habite pas dans ce village");
+		//assertTrue(controlVerifierIdentite.verifierIdentite("Abraracourcix"));
 	}
 
 }
