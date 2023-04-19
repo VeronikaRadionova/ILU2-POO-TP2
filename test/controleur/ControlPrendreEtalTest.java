@@ -47,19 +47,19 @@ class ControlPrendreEtalTest {
 	@Test
 	void testPrendreEtal() {
 		ControlPrendreEtal controlPrendreEtal = new ControlPrendreEtal(controlVerifierIdentite, village);
+		assertEquals(controlPrendreEtal.prendreEtal("Obelix", "fleurs", 6), -1, "Le gaulois n'appartient pas à ce village et ne peut pas occuper l'étal");
 		Gaulois obelix = new Gaulois("Obelix", 10);
 		village.ajouterHabitant(obelix);
-		assertEquals(controlPrendreEtal.prendreEtal("Asterix", "fleurs", 5),1);
-		assertNotEquals(controlPrendreEtal.prendreEtal("Obelix", "fleurs", 6),1);
-		
+		assertEquals(controlPrendreEtal.prendreEtal("Asterix", "fleurs", 5),1, "Numéro saisi est le même que le numéro d'étal occupé");
+		assertNotEquals(controlPrendreEtal.prendreEtal("Obelix", "fleurs", 6),1, "Numéro saisi ne correspond pas au numéro d'étal occupé");
 	}
 
 	@Test
 	void testVerifierIdentite() {
 		ControlPrendreEtal controlPrendreEtal = new ControlPrendreEtal(controlVerifierIdentite, village);
 		//assertNotNull(controlPrendreEtal,"Constructeur ne renvoie pas null");
-		assertTrue(controlPrendreEtal.verifierIdentite("Asterix"));
-		assertFalse(controlPrendreEtal.verifierIdentite("Obelix"));
+		assertTrue(controlPrendreEtal.verifierIdentite("Asterix"), "Ce gaulois habite dans ce village");
+		assertFalse(controlPrendreEtal.verifierIdentite("Obelix"), "Ce gaulois n'habite pas dans ce village");
 	}
 
 }

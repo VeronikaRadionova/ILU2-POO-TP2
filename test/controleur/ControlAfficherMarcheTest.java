@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import personnages.Chef;
+import personnages.Gaulois;
 import villagegaulois.Village;
 
 class ControlAfficherMarcheTest {
@@ -28,6 +29,11 @@ class ControlAfficherMarcheTest {
 	@Test
 	void testDonnerInfosMarche() {
 		ControlAfficherMarche controlAfficherMarche = new ControlAfficherMarche(village);
+		//String[] donnes = new String[0];
+		assertNotNull(controlAfficherMarche.donnerInfosMarche());
+		Gaulois asterix = new Gaulois("Asterix",5);
+		village.ajouterHabitant(asterix);
+		village.installerVendeur(asterix, "fleurs", 4);
 		assertNotNull(controlAfficherMarche.donnerInfosMarche());
 	}
 

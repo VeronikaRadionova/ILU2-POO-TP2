@@ -6,6 +6,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import personnages.Chef;
+import personnages.Druide;
+import personnages.Gaulois;
 import villagegaulois.Village;
 
 class ControlAfficherVillageTest {
@@ -29,21 +31,27 @@ class ControlAfficherVillageTest {
 	@Test
 	void testDonnerNomsVillageois() {
 		ControlAfficherVillage controlAfficherVillage = new ControlAfficherVillage(village);
-		assertNotNull(controlAfficherVillage, "Constructeur ne renvoie pas null");
-		controlAfficherVillage.donnerNomsVillageois();
+		//assertNotNull(controlAfficherVillage, "Constructeur ne renvoie pas null");
+		assertNotNull(controlAfficherVillage.donnerNomsVillageois(),"Constructeur ne renvoie pas null");
+		Gaulois asterix = new Gaulois("ASterix", 5);
+		village.ajouterHabitant(asterix);
+		assertNotNull(controlAfficherVillage.donnerNomsVillageois(), "Constructeur ne renvoie pas null");
+		Druide panoramix = new Druide("Panoramix", 6, 4, 8);
+		village.ajouterHabitant(panoramix);
+		assertNotNull(controlAfficherVillage.donnerNomsVillageois(), "Constructeur ne renvoie pas null");
 	}
 
 	@Test
 	void testDonnerNomVillage() {
 		ControlAfficherVillage controlAfficherVillage = new ControlAfficherVillage(village);
-		assertNotNull(controlAfficherVillage, "Constructeur ne renvoie pas null");
-		controlAfficherVillage.donnerNomVillage();
+		//assertNotNull(controlAfficherVillage, "Constructeur ne renvoie pas null");
+		assertNotNull(controlAfficherVillage.donnerNomVillage(), "Constructeur ne renvoie pas null");
 	}
 
 	@Test
 	void testDonnerNbEtals() {
 		ControlAfficherVillage controlAfficherVillage = new ControlAfficherVillage(village);
-		controlAfficherVillage.donnerNbEtals();
+		assertNotNull(controlAfficherVillage.donnerNbEtals(), "Constructeur ne renvoie pas null");
 	}
 
 }

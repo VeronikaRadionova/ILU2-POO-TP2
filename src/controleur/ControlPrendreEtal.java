@@ -16,12 +16,15 @@ public class ControlPrendreEtal {
 	public boolean resteEtals() {
 		return village.rechercherEtalVide();
 	}
-
+	
+	
 	public int prendreEtal(String nomVendeur, String produit, int nbProduit) {
 		Gaulois gaulois = village.trouverHabitant(nomVendeur);
-		return village.installerVendeur(gaulois, produit, nbProduit);
-		//int numeroEtal = -1;
-		//return numeroEtal;
+		if (gaulois != null) {
+			return village.installerVendeur(gaulois, produit, nbProduit);
+		}
+		int numeroEtal = -1;
+		return numeroEtal;
 	}
 
 	public boolean verifierIdentite(String nomVendeur) {

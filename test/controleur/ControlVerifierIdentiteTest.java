@@ -33,6 +33,7 @@ class ControlVerifierIdentiteTest {
 		ControlVerifierIdentite controlVerifierIdentite = new ControlVerifierIdentite(village);
 		assertTrue(controlVerifierIdentite.verifierIdentite("Asterix"));
 		assertFalse(controlVerifierIdentite.verifierIdentite("Obelix"));
+		assertTrue(controlVerifierIdentite.verifierIdentite("Abraracourcix"));
 	}
 
 }

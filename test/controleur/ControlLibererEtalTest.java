@@ -44,9 +44,9 @@ class ControlLibererEtalTest {
 		ControlLibererEtal controlLibererEtal = new ControlLibererEtal(controlTrouverEtalVendeur);
 		Gaulois asterix = new Gaulois("Asterix",5);
 		village.ajouterHabitant(asterix);
-		assertNull(controlLibererEtal.libererEtal("Asterix"));
+		assertNull(controlLibererEtal.libererEtal("Asterix"), "Ce gaulois n'est pas encore vendeur");
 		village.installerVendeur(asterix, "fleurs", 4);
-		assertNotNull(controlLibererEtal.libererEtal("Asterix"));
+		assertNotNull(controlLibererEtal.libererEtal("Asterix"), "Ce vendeur existe");
 	}
 
 }

@@ -32,9 +32,9 @@ class ControlTrouverEtalVendeurTest {
 		ControlTrouverEtalVendeur controlTrouverEtalVendeur = new ControlTrouverEtalVendeur(village);
 		Gaulois asterix = new Gaulois("Asterix",5);
 		village.ajouterHabitant(asterix);
-		assertNull(controlTrouverEtalVendeur.trouverEtalVendeur("Asterix"));
+		assertNull(controlTrouverEtalVendeur.trouverEtalVendeur("Asterix"), "Ce galois n'est pas encore vendeur");
 		village.installerVendeur(asterix, "fleurs", 4);
-		assertNotNull(controlTrouverEtalVendeur.trouverEtalVendeur("Asterix"));
+		assertNotNull(controlTrouverEtalVendeur.trouverEtalVendeur("Asterix"), "Vendeur trouvé");
 	}
 
 }
